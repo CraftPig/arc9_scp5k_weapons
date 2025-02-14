@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/vgui_ak74")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_scp5k_mk18")
 
 SWEP.Category = "ARC9 - SCP: 5K"
 SWEP.SubCategory = "Assault Rifles"
