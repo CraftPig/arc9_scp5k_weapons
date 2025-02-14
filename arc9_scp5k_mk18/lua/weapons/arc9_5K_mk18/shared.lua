@@ -265,13 +265,13 @@ SWEP.ShouldDropMagEmpty 		= true
 
 SWEP.DropMagazineQCA 			= 4
 SWEP.DropMagazineAmount 		= 1 
-SWEP.DropMagazineTime 			= 0.4
+SWEP.DropMagazineTime 			= 0.45
 
 SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
 SWEP.DropMagazineVelocity 		= Vector(0, -0, 0) -- Put something here if your anim throws the mag with force
 
-SWEP.DropMagazineModel 			= "models/weapons/arc9/5K/mp9/w_mp9_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel 			= "models/weapons/arc9/5K/mk18/w_mk18_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 								"physics/metal/weapon_impact_soft2.wav",
 								"physics/metal/weapon_impact_soft3.wav", } -- Table of sounds a dropped magazine should play.
@@ -280,9 +280,9 @@ SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 SWEP.CaseEffectQCA 				= 3 				 
 SWEP.NoShellEject 				= false
 SWEP.NoShellEjectManualAction 	= false 
-SWEP.ShellCorrectAng 			= Angle(0, -90, 0)
+SWEP.ShellCorrectAng 			= Angle(0, -0, 90)
 
-SWEP.ShellModel 				= "models/shells/shell_57.mdl" -- shell_12gauge, shell_338mag, shell_556, shell_57, shell_762nato, shell_9mm
+SWEP.ShellModel 				= "models/shells/shell_556.mdl" -- shell_12gauge, shell_338mag, shell_556, shell_57, shell_762nato, shell_9mm
 
 -- Muzzle Flash -----------------------------------------------------------------------------------------
 SWEP.MuzzleEffectQCA 			= 2 
@@ -300,10 +300,10 @@ SWEP.CamQCA 					= 1 -- QC Attachment for camera movement.
 SWEP.CamQCA_Mult 				= 1 -- Intensity for QC camera movement.
 SWEP.CamQCA_Mult_ADS 			= nil -- Intensity for QC camera movement in ADS.
 SWEP.CamCoolView 				= false -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
-SWEP.CamOffsetAng 				= Angle(0, 0, 0)
+SWEP.CamOffsetAng 				= Angle(-1, 0, 0)
 
 SWEP.BobSprintMult 				= 0.75
-SWEP.BobWalkMult 				= 1.25
+SWEP.BobWalkMult 				= 1
 
 -- Bones -------------------------------------------------------------------------------------------------
 SWEP.BulletBones = { -- the bone that represents bullets in gun/mag
@@ -326,10 +326,10 @@ SWEP.HideBones = {
 SWEP.ShootSound               	= { "5K_MK18.Fire" }
 SWEP.ShootSoundSilenced       	= { "5K_MK18.FireSil" } 
 
-SWEP.ShootSoundIndoor 			= { "Stalker2.5K.MK18TailIndoor" }  
-SWEP.DistantShootSound 			= { "Stalker2.5K.MK18TailOutdoor" }  
-SWEP.ShootSoundIndoorSilenced 	= { "Stalker2.5K.SMGSilTailIndoor" }  
-SWEP.DistantShootSoundSilenced  = { "Stalker2.5K.RifleSilTailOutdoor" }  
+SWEP.ShootSoundIndoor 			= { "5K.MK18TailIndoor" }  
+SWEP.DistantShootSound 			= { "5K.MK18TailOutdoor" }  
+SWEP.ShootSoundIndoorSilenced 	= { "5K.SilSMGIndoor" }  
+SWEP.DistantShootSoundSilenced  = { "5K.SilRifleOutdoor" }  
 
 SWEP.DryFireSound 				= { "5K.DryfireM4A1" }  
 SWEP.FiremodeSound 				= "weapons/arc9/5K/blank.ogg"
@@ -537,6 +537,20 @@ SWEP.Animations = {
     --------------------------------------------------- Draw & Holster
 	["ready"] = {
         Source = {"ready"},
+		MinProgress = 0.87,
+        FireASAP = true,
+		IKTimeLine = {
+			{
+                t = 0.6,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+                rhik = 0
+            },
+        },
 		EventTable = {
             {s = "5K.Draw", t = 1 / 30},
 			{s = "5K_MK18.Ready", t = 1 / 30},
@@ -574,6 +588,24 @@ SWEP.Animations = {
     ["reload"] = {
         Source = {"reload"},
         MinProgress = 0.58,
+		IKTimeLine = {
+			{
+                t = 0.0,
+                lhik = 1,
+            },
+			{
+                t = 0.2,
+                lhik = 0,
+            },
+			{
+                t = 0.7,
+                lhik = 0,
+            },
+            {
+                t = 0.95,
+                lhik = 1,
+            },
+        },
 		EventTable = {
 			{s = "5K_MK18.MagPouchDown", t = 5 / 30},
 			{s = "5K_MK18.MagOut", t = 23 / 30},
@@ -583,7 +615,25 @@ SWEP.Animations = {
     },
 	["reload_empty"] = {
         Source = {"reload_empty"},
-        MinProgress = 0.65,
+        MinProgress = 0.71,
+		IKTimeLine = {
+			{
+                t = 0.0,
+                lhik = 1,
+            },
+			{
+                t = 0.2,
+                lhik = 0,
+            },
+			{
+                t = 0.7,
+                lhik = 0,
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+            },
+        },
 		EventTable = {
 			{s = "5K_MK18.MagOutEmpty", t = 1 / 30},
 			{s = "5K_MK18.MagPouchDown", t = 8 / 30},
@@ -596,6 +646,26 @@ SWEP.Animations = {
         Source = {"inspect"},
         MinProgress = 0.93,
         FireASAP = true,
+		IKTimeLine = {
+			{
+                t = 0.0,
+                lhik = 1,
+            },
+			{
+                t = 0.1,
+                lhik = 0,
+            },
+			{
+                t = 0.83,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 0
+            },
+        },
 		EventTable = {
             {s = "5K_MK18.InspectRotate", t = 0 / 30},
 			{s = "5K_MK18.InspectBoltBack", t = 74 / 30},
@@ -606,28 +676,68 @@ SWEP.Animations = {
         Source = {"magcheck"},
         MinProgress = 0.93,
         FireASAP = true,
+		IKTimeLine = {
+			{
+                t = 0.0,
+                lhik = 1,
+            },
+			{
+                t = 0.1,
+                lhik = 0,
+            },
+			{
+                t = 0.75,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 0
+            },
+        },
 		EventTable = {
             {s = "5K_MK18.MagCheckOut", t = 0 / 30},
-			{s = "5K_MK18.MagCheckIn", t = 60 / 30},
+			{s = "5K_MK18.MagCheckIn", t = 57 / 30},
         },
     },
 	["magcheck_empty"] = {
         Source = {"magcheck_empty"},
         MinProgress = 0.93,
         FireASAP = true,
+		IKTimeLine = {
+			{
+                t = 0.0,
+                lhik = 1,
+            },
+			{
+                t = 0.1,
+                lhik = 0,
+            },
+			{
+                t = 0.75,
+                lhik = 0,
+                rhik = 0
+            },
+            {
+                t = 0.9,
+                lhik = 1,
+                rhik = 0
+            },
+        },
 		EventTable = {
             {s = "5K_MK18.MagCheckOut", t = 0 / 30},
-			{s = "5K_MK18.MagCheckIn", t = 60 / 30},
+			{s = "5K_MK18.MagCheckIn", t = 57 / 30},
         },
     },
 	--------------------------------------------------- Movement
-	["jump"] = {
-        Source = {"jiggle"},
-		Time = 1.5,
-		MinProgress = 0.033,
-        FireASAP = true,
-		InstantIdle = true,
-    },
+	-- ["jump"] = {
+        -- Source = {"jiggle"},
+		-- Time = 1,
+		-- MinProgress = 0.033,
+        -- FireASAP = true,
+		-- InstantIdle = true,
+    -- },
 	["idle_sprint"] = {
         Source = {"sprint"},
     },
@@ -649,28 +759,32 @@ return end
 SWEP.Hook_Think = function(self)
 	local owner = self:GetOwner() 
 
-	if self:GetNextPrimaryFire() >= CurTime() then return end
-	if !self:CanReload() then return end
-	if self:GetInSights() == true then return end
-	if self:GetUBGL() == true then return end
+	-- if self:GetNextPrimaryFire() >= CurTime() then return end
+	-- if !self:CanReload() then return end
+	-- if self:GetInSights() == true then return end
+	-- if self:GetUBGL() == true then return end
 	
-	if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
-		self:PlayAnimation("jump", 1, true)
-		self.MidAir = 1
-	end
-	if not owner:OnGround() then
-		self.MidAir = 1
-	end
-	if self.MidAir == 1 and owner:OnGround() then -- Jump End
-		self.MidAir = 0
-		self:PlayAnimation("jump", 1, false)
-	end
+	-- if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
+		-- self:PlayAnimation("jump", 1, true)
+		-- self.MidAir = 1
+	-- end
+	-- if not owner:OnGround() then
+		-- self.MidAir = 1
+	-- end
+	-- if self.MidAir == 1 and owner:OnGround() then -- Jump End
+		-- self.MidAir = 0
+		-- self:PlayAnimation("jump", 1, false)
+	-- end
 end
 
 SWEP.Hook_TranslateAnimation = function (self, anim)
 	if self:Clip1() < self:GetMaxClip1() then
 	    if anim == "inspect" then
-            return "magcheck"
+			if self:Clip1() >= 1 then
+				return "magcheck"
+			else
+				return "magcheck_empty"
+			end
 		end
 	end
 end	

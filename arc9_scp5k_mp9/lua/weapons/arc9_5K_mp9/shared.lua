@@ -299,7 +299,7 @@ SWEP.CamQCA 					= 1 -- QC Attachment for camera movement.
 SWEP.CamQCA_Mult 				= 1 -- Intensity for QC camera movement.
 SWEP.CamQCA_Mult_ADS 			= nil -- Intensity for QC camera movement in ADS.
 SWEP.CamCoolView 				= false -- Enable to use procedural camera movement. Set CamQCA to muzzle QCA or something.
-SWEP.CamOffsetAng 				= Angle(0, 0, 0)
+SWEP.CamOffsetAng 				= Angle(-1, 0, 0)
 
 SWEP.BobSprintMult 				= 0.75
 SWEP.BobWalkMult 				= 1.25
@@ -347,10 +347,10 @@ SWEP.HideBones = {
 SWEP.ShootSound               	= { "5K_MP9.Fire" }
 SWEP.ShootSoundSilenced       	= { "5K_MP9.FireSil" } 
 
-SWEP.ShootSoundIndoor 			= { "Stalker2.5K.AK762TailIndoor" }  
-SWEP.DistantShootSound 			= { "Stalker2.5K.AK762TailOutdoor" }  
-SWEP.ShootSoundIndoorSilenced 	= { "Stalker2.5K.SMGSilTailIndoor" }  
-SWEP.DistantShootSoundSilenced  = { "Stalker2.5K.RifleSilTailOutdoor" }  
+SWEP.ShootSoundIndoor 			= { "5K.MK18TailIndoor" }  
+SWEP.DistantShootSound 			= { "5K.MK18TailOutdoor" }  
+SWEP.ShootSoundIndoorSilenced 	= { "5K.SilSMGIndoor" }  
+SWEP.DistantShootSoundSilenced  = { "5K.SilSMGOutdoor" }  
 
 SWEP.DryFireSound 				= { "5K.DryfireM4A1" }  
 SWEP.FiremodeSound 				= "weapons/arc9/5K/blank.ogg"
@@ -573,13 +573,13 @@ SWEP.Animations = {
         },
     },
 	--------------------------------------------------- Movement
-	["jump"] = {
-        Source = {"jiggle"},
-		Time = 2,
-		MinProgress = 0.033,
-        FireASAP = true,
-		InstantIdle = true,
-    },
+	-- ["jump"] = {
+        -- Source = {"jiggle"},
+		-- Time = 2,
+		-- MinProgress = 0.033,
+        -- FireASAP = true,
+		-- InstantIdle = true,
+    -- },
 	["idle_sprint"] = {
         Source = {"sprint"},
     },
@@ -595,22 +595,22 @@ return end
 SWEP.Hook_Think = function(self)
 	local owner = self:GetOwner() 
 
-	if self:GetNextPrimaryFire() >= CurTime() then return end
-	if !self:CanReload() then return end
-	if self:GetInSights() == true then return end
-	if self:GetUBGL() == true then return end
+	-- if self:GetNextPrimaryFire() >= CurTime() then return end
+	-- if !self:CanReload() then return end
+	-- if self:GetInSights() == true then return end
+	-- if self:GetUBGL() == true then return end
 	
-	if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
-		self:PlayAnimation("jump", 1, true)
-		self.MidAir = 1
-	end
-	if not owner:OnGround() then
-		self.MidAir = 1
-	end
-	if self.MidAir == 1 and owner:OnGround() then -- Jump End
-		self.MidAir = 0
-		self:PlayAnimation("jump", 1, false)
-	end
+	-- if (owner:KeyPressed(IN_JUMP)) and self.MidAir == 0 then
+		-- self:PlayAnimation("jump", 1, true)
+		-- self.MidAir = 1
+	-- end
+	-- if not owner:OnGround() then
+		-- self.MidAir = 1
+	-- end
+	-- if self.MidAir == 1 and owner:OnGround() then -- Jump End
+		-- self.MidAir = 0
+		-- self:PlayAnimation("jump", 1, false)
+	-- end
 end
 
 SWEP.Hook_TranslateAnimation = function (self, anim)

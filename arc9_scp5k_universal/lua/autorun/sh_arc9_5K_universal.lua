@@ -272,6 +272,45 @@ sound.Add( {
 } )
 ---------------------------------------------------------------------------------
 sound.Add( {
+    name = "5K.SilRifleOutdoor",
+    channel = CHAN_WEAPON,
+    volume = 110,
+    level = 65,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/5K/tail/sil/Rifle_Sil_Tail_Outdoor_1.ogg",
+		 "weapons/arc9/5K/tail/sil/Rifle_Sil_Tail_Outdoor_2.ogg",
+		 "weapons/arc9/5K/tail/sil/Rifle_Sil_Tail_Outdoor_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K.SilSMGOutdoor",
+    channel = CHAN_WEAPON,
+    volume = 110,
+    level = 65,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Outdoor_1.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Outdoor_2.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Outdoor_3.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K.SilSMGIndoor",
+    channel = CHAN_WEAPON,
+    volume = 110,
+    level = 65,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Indoor_1.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Indoor_2.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Indoor_3.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Indoor_4.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Indoor_5.ogg",
+		 "weapons/arc9/5K/tail/sil/SMG_Sil_Tail_Indoor_6.ogg",
+    }
+} )
+sound.Add( {
     name = "5K.MK18TailOutdoor",
     channel = CHAN_WEAPON,
     volume = 125,
