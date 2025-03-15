@@ -34,6 +34,28 @@ local conVars = {
         name = "scp5k_mult_recoil",
         default = "1",
     },
+	{
+        name = "scp5k_mult_recoilads",
+        default = "1",
+    },
+	{
+        name = "scp5k_mult_recoilkick",
+        default = "1",
+    },
+	{
+        name = "scp5k_mult_supply",
+        default = "0",
+    },
+	{
+        name = "scp5k_nearwall",
+        default = "0",
+		replicated = true,
+    },
+	{
+        name = "scp5k_automaticdefault",
+        default = "0",
+		replicated = true,
+    },
 }
 ARC9.ConVarData = {}
 
@@ -77,6 +99,12 @@ if CLIENT then
 			{ type = "label", text = "Multipliers" },
 			{ sv = true, type = "slider", text = "Damage", desc = "Multiplies ranged damage.", convar = "scp5k_mult_dmg", min = 0.1, max = 5, decimals = 2 },
 			{ sv = true, type = "slider", text = "Recoil", desc = "Multiplies the general amount of recoil.", convar = "scp5k_mult_recoil", min = 0.1, max = 5, decimals = 2 },
+			{ sv = true, type = "slider", text = "Recoil Sighted", desc = "Multiplies the general amount of recoil while sighted (calculated after Recoil).", convar = "scp5k_mult_recoilads", min = 0.1, max = 5, decimals = 2 },
+			{ sv = true, type = "slider", text = "Recoil Kick", desc = "Multiplies Recoil Kick.", convar = "scp5k_mult_recoilkick", min = 0.1, max = 2, decimals = 1 },
+			{ type = "label", text = "Miscellaneous" },
+			{ sv = true, type = "slider", text = "Supply Limit", desc = "Extends the supply limit.", convar = "scp5k_mult_supply", min = 0, max = 10, decimals = 0 },
+			{ sv = true, type = "bool", text = "Disable Near Wall", convar = "scp5k_nearwall", desc = "Prevents guns from being disabled when near geometry." },
+			{ sv = true, type = "bool", text = "Automatic Default", convar = "scp5k_automaticdefault", desc = "Guns initialize with the fireselector set to automatic." },
         }
         
         table.insert(ARC9.SettingsTable, 14, scp5ksettings) 
@@ -87,6 +115,11 @@ end
 concommand.Add("arc9_scp5k_reset", function()
 	RunConsoleCommand("arc9_scp5k_mult_dmg", "1")
     RunConsoleCommand("arc9_scp5k_mult_recoil", "1")
+	RunConsoleCommand("arc9_scp5k_mult_recoilads", "1")
+	RunConsoleCommand("arc9_scp5k_mult_recoilkick", "1")
+	RunConsoleCommand("arc9_scp5k_mult_supply", "0")
+	RunConsoleCommand("arc9_scp5k_nearwall", "0")
+	RunConsoleCommand("arc9_scp5k_automaticdefault", "0")
 end)
 
 -- list.Set("ContentCategoryIcons", "nil", "nil.png")
