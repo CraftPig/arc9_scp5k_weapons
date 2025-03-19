@@ -9,7 +9,7 @@ SWEP.Spawnable = true
 -------------------------------------------------------------------------------------------------------
 -- Hud and Spawn Menu Elements ------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------
-SWEP.CustomSelectIcon = Material("vgui/hud/arc9_scp5k_mk18")
+SWEP.CustomSelectIcon = Material("vgui/hud/arc9_scp5k_galil")
 
 SWEP.Category = "ARC9 - SCP: 5K"
 SWEP.SubCategory = "Assault Rifles"
@@ -24,7 +24,7 @@ SWEP.Class = "Assault Rifle"
 SWEP.Trivia = {
     Caliber = "5.56x45mm",
 	Weight = "3.5kg (7.6 lbs)",
-	Origin = "United States",
+	Origin = "Israel",
 	Manufacturer = "Israel Weapon Industries",
 	Year = "2014",
 }
@@ -126,17 +126,14 @@ SWEP.SupplyLimit    = 6 + (GetConVar("arc9_scp5k_mult_supply"):GetFloat())
 SWEP.AmmoPerShot    = 1 
 
 -- Recoil ---------------------------------------------------------------------------------------------
-SWEP.RecoilSeed 				= 21
-SWEP.RecoilPatternDrift 		= 15
-
-SWEP.Recoil 					= 0.4 * (GetConVar("arc9_scp5k_mult_recoil"):GetFloat())
+SWEP.Recoil 					= 0.35 * (GetConVar("arc9_scp5k_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights 			= 0.5 * (GetConVar("arc9_scp5k_mult_recoilads"):GetFloat())
 
 SWEP.RecoilUp 					= 4
-SWEP.RecoilSide 				= 3
+SWEP.RecoilSide 				= 0
 
 SWEP.RecoilRandomUp 			= 1
-SWEP.RecoilRandomSide 			= SWEP.RecoilSide
+SWEP.RecoilRandomSide 			= 3
 
 SWEP.RecoilDissipationRate 		= 40
 SWEP.RecoilResetTime 			= 0.1
@@ -154,27 +151,42 @@ SWEP.PhysicalVisualRecoil 					= true
 SWEP.VisualRecoilCenter 					= Vector(0, 5, -5)
 
 SWEP.VisualRecoilMultHipFire 				= 1.0
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 0.0
+SWEP.VisualRecoilMultSights 				= 1.0
+SWEP.VisualRecoilMultCrouch 				= 1.0
 
-SWEP.VisualRecoilRoll 						= 10
-SWEP.VisualRecoilSide 						= 0.05
+SWEP.VisualRecoilUp 						= 0
+SWEP.VisualRecoilRoll 						= 0
+SWEP.VisualRecoilSide 						= 0.0
 
-SWEP.VisualRecoilPunch 						= 0.5
-SWEP.VisualRecoilPunchMultSights 			= 15
+SWEP.VisualRecoilPunch 						= 0.1
+SWEP.VisualRecoilPunchMultSights 			= 1.5
 
-SWEP.RecoilKick 							= 2.75 * (GetConVar("arc9_scp5k_mult_recoilkick"):GetFloat())
-SWEP.RecoilKickDamping 						= 35.0 -- Camera recoil damping
+
+
+SWEP.VisualRecoilDampingConst 				= 5  -- spring
+SWEP.VisualRecoilSpringPunchDamping 		= 5 -- wobbly 
+SWEP.VisualRecoilSpringMagnitude 			= 2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount, self)
     if recamount > 1 then
 		if self:GetInSights() == false then
-			up = up + (recamount * 0.1)
+			up = up + (recamount * 0.015)
+			side = (self:GetRecoilSide() * 0.1)
+		else
+			side = (self:GetRecoilSide() * 0.015)
 		end
     end
 	
     return up, side, roll, punch
 end
+
+SWEP.SubtleVisualRecoil 					= 0.25 -- multiplier, set to something to enable this thing
+SWEP.SubtleVisualRecoilDirection 			= 3 -- roll angle, 5 is to right, -5 to left, 0 is nothing etc
+SWEP.SubtleVisualRecoilSpeed 				= 1 -- speed of it, be careful with this, 0.3 - 1.75
+
+SWEP.RecoilKick 							= 3.15 * (GetConVar("arc9_scp5k_mult_recoilkick"):GetFloat())
+SWEP.RecoilKickDamping 						= 35.0 -- Camera recoil damping
+
 
 -- Spread ---------------------------------------------------------------------------------------------
 SWEP.Spread 					= 0.01
@@ -277,13 +289,13 @@ SWEP.ShouldDropMagEmpty 		= true
 
 SWEP.DropMagazineQCA 			= 4
 SWEP.DropMagazineAmount 		= 1 
-SWEP.DropMagazineTime 			= 0.45
+SWEP.DropMagazineTime 			= 0.7
 
 SWEP.DropMagazinePos 			= Vector(-0, 0, -0) -- offsets
 SWEP.DropMagazineAng 			= Angle(0, 0, 0)
 SWEP.DropMagazineVelocity 		= Vector(0, -0, 0) -- Put something here if your anim throws the mag with force
 
-SWEP.DropMagazineModel 			= "models/weapons/arc9/scp5K/mk18/w_mk18_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
+SWEP.DropMagazineModel 			= "models/weapons/arc9/scp5K/galil/w_galil_mag.mdl" -- Set to a string or table to drop this magazine when reloading.
 SWEP.DropMagazineSounds 		= {"physics/metal/weapon_impact_soft1.wav",
 								"physics/metal/weapon_impact_soft2.wav",
 								"physics/metal/weapon_impact_soft3.wav", } -- Table of sounds a dropped magazine should play.
@@ -457,22 +469,22 @@ SWEP.Attachments = {
     },
 	{
 		PrintName = "Sticker 1",
-        StickerModel = "models/weapons/arc9/scp5K/mk18/sticker_1.mdl",
+        StickerModel = "models/weapons/arc9/scp5K/galil/sticker_1.mdl",
         Category = "stickers",
     },
 	{
 		PrintName = "Sticker 2",
-        StickerModel = "models/weapons/arc9/scp5K/mk18/sticker_2.mdl",
+        StickerModel = "models/weapons/arc9/scp5K/galil/sticker_2.mdl",
         Category = "stickers",
     },
 	{
 		PrintName = "Sticker 3",
-        StickerModel = "models/weapons/arc9/scp5K/mk18/sticker_3.mdl",
+        StickerModel = "models/weapons/arc9/scp5K/galil/sticker_3.mdl",
         Category = "stickers",
     },
 	{
 		PrintName = "Sticker 4",
-        StickerModel = "models/weapons/arc9/scp5K/mk18/sticker_4.mdl",
+        StickerModel = "models/weapons/arc9/scp5K/galil/sticker_4.mdl",
         Category = "stickers",
     },
 }
@@ -808,7 +820,7 @@ SWEP.CustomPoseParamsHandler = function (self, ent, iswm)
 	local inSights = self:GetInSights()
 	local clipEmpty = self:Clip1() == 0
 	local ParamRecoil = 1
-	local ParamRecoilADS = 0.3
+	local ParamRecoilADS = 0.45
 	local ParamEmpty = 0.07
 	local ParamIdle = 1
 	local ParamIdleADS = 0.2

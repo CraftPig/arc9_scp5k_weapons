@@ -126,17 +126,14 @@ SWEP.SupplyLimit    = 6 + (GetConVar("arc9_scp5k_mult_supply"):GetFloat())
 SWEP.AmmoPerShot    = 1 
 
 -- Recoil ---------------------------------------------------------------------------------------------
-SWEP.RecoilSeed 				= 27
-SWEP.RecoilPatternDrift 		= 35
-
-SWEP.Recoil 					= 0.45 * (GetConVar("arc9_scp5k_mult_recoil"):GetFloat())
+SWEP.Recoil 					= 0.35 * (GetConVar("arc9_scp5k_mult_recoil"):GetFloat())
 SWEP.RecoilMultSights 			= 0.5 * (GetConVar("arc9_scp5k_mult_recoilads"):GetFloat())
 
 SWEP.RecoilUp 					= 6
-SWEP.RecoilSide 				= 3
+SWEP.RecoilSide 				= 0
 
 SWEP.RecoilRandomUp 			= 1.5
-SWEP.RecoilRandomSide 			= SWEP.RecoilSide
+SWEP.RecoilRandomSide 			= 3
 
 SWEP.RecoilDissipationRate 		= 40
 SWEP.RecoilResetTime 			= 0.1
@@ -154,30 +151,45 @@ SWEP.PhysicalVisualRecoil 					= true
 SWEP.VisualRecoilCenter 					= Vector(0, 5, -5)
 
 SWEP.VisualRecoilMultHipFire 				= 1.0
-SWEP.VisualRecoilMultSights 				= 0.005
-SWEP.VisualRecoilMultCrouch 				= 0.0
+SWEP.VisualRecoilMultSights 				= 1.0
+SWEP.VisualRecoilMultCrouch 				= 1.0
 
-SWEP.VisualRecoilRoll 						= 10
-SWEP.VisualRecoilSide 						= 0.05
+SWEP.VisualRecoilUp 						= 0
+SWEP.VisualRecoilRoll 						= 0
+SWEP.VisualRecoilSide 						= 0.0
 
-SWEP.VisualRecoilPunch 						= 0.5
-SWEP.VisualRecoilPunchMultSights 			= 15
+SWEP.VisualRecoilPunch 						= 0.1
+SWEP.VisualRecoilPunchMultSights 			= 1.5
 
-SWEP.RecoilKick 							= 3.35 * (GetConVar("arc9_scp5k_mult_recoilkick"):GetFloat())
-SWEP.RecoilKickDamping 						= 35.0 -- Camera recoil damping
+
+
+SWEP.VisualRecoilDampingConst 				= 5  -- spring
+SWEP.VisualRecoilSpringPunchDamping 		= 5 -- wobbly 
+SWEP.VisualRecoilSpringMagnitude 			= 2
 
 SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount, self)
     if recamount > 1 then
 		if self:GetInSights() == false then
-			up = up + (recamount * 0.1)
+			up = up + (recamount * 0.015)
+			side = (self:GetRecoilSide() * 0.1)
+		else
+			side = (self:GetRecoilSide() * 0.015)
 		end
     end
 	
     return up, side, roll, punch
 end
 
+SWEP.SubtleVisualRecoil 					= 0.25 -- multiplier, set to something to enable this thing
+SWEP.SubtleVisualRecoilDirection 			= -3 -- roll angle, 5 is to right, -5 to left, 0 is nothing etc
+SWEP.SubtleVisualRecoilSpeed 				= 1 -- speed of it, be careful with this, 0.3 - 1.75
+
+SWEP.RecoilKick 							= 3.2 * (GetConVar("arc9_scp5k_mult_recoilkick"):GetFloat())
+SWEP.RecoilKickDamping 						= 35.0 -- Camera recoil damping
+
+
 -- Spread ---------------------------------------------------------------------------------------------
-SWEP.Spread 					= 0.01
+SWEP.Spread 					= 0.0
 
 SWEP.SpreadAddRecoil 			= 0.0
 SWEP.SpreadMultSights			= 0.0
