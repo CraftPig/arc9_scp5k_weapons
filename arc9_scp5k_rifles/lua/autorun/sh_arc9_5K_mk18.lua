@@ -55,7 +55,7 @@ sound.Add( {
     name = "5K_MK18.MagIn",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Reload_Half_MagIn.ogg",
@@ -65,7 +65,7 @@ sound.Add( {
     name = "5K_MK18.MagOut",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Reload_Half_MagOut.ogg",
@@ -76,7 +76,7 @@ sound.Add( {
     name = "5K_MK18.MagInEmpty",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Reload_Empty_MagIn.ogg",
@@ -86,7 +86,7 @@ sound.Add( {
     name = "5K_MK18.MagOutEmpty",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Reload_Empty_MagOut.ogg",
@@ -96,7 +96,7 @@ sound.Add( {
     name = "5K_MK18.Bolt",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Reload_Empty_Bolt.ogg",
@@ -107,7 +107,7 @@ sound.Add( {
     name = "5K_MK18.MagCheckOut",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_MagCheck_MagOut.ogg",
@@ -117,7 +117,7 @@ sound.Add( {
     name = "5K_MK18.MagCheckIn",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_MagCheck_MagIn.ogg",
@@ -128,7 +128,7 @@ sound.Add( {
     name = "5K_MK18.InspectRotate",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Inspect_Rotate.ogg",
@@ -138,7 +138,7 @@ sound.Add( {
     name = "5K_MK18.InspectBoltBack",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Inspect_Bolt_Back.ogg",
@@ -148,7 +148,7 @@ sound.Add( {
     name = "5K_MK18.InspectBoltForward",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_Inspect_Bolt_Forward.ogg",
@@ -170,7 +170,7 @@ sound.Add( {
     name = "5K_MK18.Ready",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/mk18/MK18_FIRST_EQUIP.ogg",

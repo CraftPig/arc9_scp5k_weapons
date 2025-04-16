@@ -59,7 +59,7 @@ sound.Add( {
     name = "5K_Galil.MagIn",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Half_MagIn.ogg",
@@ -69,7 +69,7 @@ sound.Add( {
     name = "5K_Galil.MagOut",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/Galil_Reload_Half_MagOut.ogg",
@@ -79,7 +79,7 @@ sound.Add( {
     name = "5K_Galil.MagStart",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Half_Start.ogg",
@@ -104,7 +104,7 @@ sound.Add( {
     name = "5K_Galil.MagInEmpty",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Empty_MagIn.ogg",
@@ -114,7 +114,7 @@ sound.Add( {
     name = "5K_Galil.MagOutEmpty",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Empty_MagOut.ogg",
@@ -124,7 +124,7 @@ sound.Add( {
     name = "5K_Galil.Bolt",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Empty_Bolt.ogg",
@@ -135,7 +135,7 @@ sound.Add( {
     name = "5K_Galil.MagCheckOut",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Empty_MagOut.ogg",
@@ -145,7 +145,7 @@ sound.Add( {
     name = "5K_Galil.MagCheckIn",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Reload_Empty_MagIn.ogg",
@@ -155,7 +155,7 @@ sound.Add( {
     name = "5K_Galil.MagCheckThrow",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_MagCheck_Throw.ogg",
@@ -166,7 +166,7 @@ sound.Add( {
     name = "5K_Galil.InspectRotate",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Inspect_Rotate.ogg",
@@ -176,7 +176,7 @@ sound.Add( {
     name = "5K_Galil.InspectBoltBack",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Inspect_Bolt_Back.ogg",
@@ -186,7 +186,7 @@ sound.Add( {
     name = "5K_Galil.InspectBoltForward",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/galil_Inspect_Bolt_Forward.ogg",
@@ -196,7 +196,7 @@ sound.Add( {
     name = "5K_Galil.InspectHit",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/galil/Galil_Inspect_Bolt_Hit.ogg",

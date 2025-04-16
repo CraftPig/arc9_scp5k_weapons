@@ -31,23 +31,6 @@
     "$envmaptint" "[0.1 0.1 0.1]"
 	
 	"$detailblendmode" "2"
-	"$detailblendfactor" "0.8"
-
-	Proxies {
-		CustomCamo {
-			camoTexture $detail
-			camoScale $detailscale
-            blend $detailblendfactor
-		}
-        "Arc9EnvMapTint"
-        {
-            "specularity" "0.5"
-            "min" "0"
-            "max" "0.2"
-        }
-	}
-	
-	"$detailblendmode" "2"
 	"$detailblendfactor" "0.5"
 
 	Proxies {
@@ -60,7 +43,7 @@
         {
             "specularity" "0.5"
             "min" "0"
-            "max" "0.025"
+            "max" "0.15"
         }
 	}
 }

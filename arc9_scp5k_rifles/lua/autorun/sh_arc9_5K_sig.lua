@@ -35,7 +35,7 @@ sound.Add( {
     name = "5K_SIG553.MagIn",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/sig/SIG556_Reload_Half_MagIn.ogg",
@@ -45,7 +45,7 @@ sound.Add( {
     name = "5K_SIG553.MagOut",
     channel = CHAN_WEAPON,
     volume = 1,
-    level = 75,
+    level = 65,
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/sig/SIG556_Reload_Half_MagOut.ogg",
@@ -152,6 +152,121 @@ sound.Add( {
     pitch = {95, 110},
     sound = {
          "weapons/arc9/scp5K/sig/SIG556_Inspect_Bolt_Hit.ogg",
+    }
+} )
+---------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+sound.Add( {
+    name = "5K_SIG762.Fire",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/scp5K/sig/fire/SIG762_SHOT_CORE_1.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_CORE_2.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_CORE_3.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_CORE_4.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_CORE_5.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K_SIG762.FireSil",
+    channel = CHAN_STATIC,
+    volume = 1,
+    level = 125,
+    pitch = {95, 110},
+    sound = {
+        "weapons/arc9/scp5K/sig/fire/SIG762_SHOT_SIL_CORE_1.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_SIL_CORE_2.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_SIL_CORE_3.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_SIL_CORE_4.ogg",
+		"weapons/arc9/scp5K/sig/fire/SIG762_SHOT_SIL_CORE_5.ogg",
+    }
+} )
+
+---------------------------------------------------------------------------------
+sound.Add( {
+    name = "5K_SIG762.MagIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_Reload_Half_MagIn.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K_SIG762.MagOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_Reload_Half_MagOut.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K_SIG762.MagStart",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_Reload_Half_Start.ogg",
+    }
+} )
+---------------------------------------------------------------------------------
+sound.Add( {
+    name = "5K_SIG762.MagInEmpty",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_Reload_Empty_MagIn.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K_SIG762.MagOutEmpty",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_Reload_Empty_MagOut.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K_SIG762.Bolt",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_Reload_Empty_Bolt.ogg",
+    }
+} )
+---------------------------------------------------------------------------------
+sound.Add( {
+    name = "5K_SIG762.MagCheckOut",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_MagCheck_MagOut.ogg",
+    }
+} )
+sound.Add( {
+    name = "5K_SIG762.MagCheckIn",
+    channel = CHAN_WEAPON,
+    volume = 1,
+    level = 75,
+    pitch = {95, 110},
+    sound = {
+         "weapons/arc9/scp5K/sig/SIG762_MagCheck_MagIn.ogg",
     }
 } )
 ---------------------------------------------------------------------------------
